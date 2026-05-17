@@ -13,3 +13,13 @@ export const COLORS = {
         900: '#4A1B0C',
     },
 }
+
+export const FONTS = {
+    // Poppins
+    poppins: {
+        400: 'Poppins-Regular',
+        500: 'Poppins-Medium',
+        600: 'Poppins-SemiBold',
+        700: 'Poppins-Bold',
+    }
+}
