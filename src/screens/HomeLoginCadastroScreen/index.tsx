@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
 import { COLORS, FONTS } from "../../styles/styles";
 import TitleOrange from "../../components/TitleOrange";
+import SubTitleOrange from "../../components/SubTitleOrange";
 
 export default function HomeLoginCadastroScreen() {
   return (
@@ -13,15 +14,7 @@ export default function HomeLoginCadastroScreen() {
           }}
         >
           <TitleOrange title={`Boas vindas ao\nPet Guardian!`} />
-            <Text
-              style={{
-                color: COLORS.orange[700],
-                fontFamily: FONTS.poppins[700],
-                fontSize: 20,
-              }}
-            >
-              Porque cada pet merece cuidado, proteção e carinho todos os dias.
-            </Text>
+          <SubTitleOrange title={`Faça login ou cadastre-se para começar a cuidar do seu pet!`} />
         </View>
     </LayoutWrapper>
   );
