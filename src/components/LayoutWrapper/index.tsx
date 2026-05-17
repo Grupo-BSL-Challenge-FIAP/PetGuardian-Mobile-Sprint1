@@ -5,9 +5,10 @@ import { BACKGROUND } from "../../styles/styles";
 export interface LayoutWrapperProps {
     children: React.ReactNode;
     paddingHorizontal?: number;
+    paddingBottom?: number;
 }
 
-export default function LayoutWrapper({ children, paddingHorizontal }: LayoutWrapperProps) {
+export default function LayoutWrapper({ children, paddingHorizontal, paddingBottom }: LayoutWrapperProps) {
   return (
     <>
     <SafeAreaView 
@@ -15,6 +16,7 @@ export default function LayoutWrapper({ children, paddingHorizontal }: LayoutWra
             flex: 1,
             backgroundColor: BACKGROUND.backgroundMain,
             paddingHorizontal: paddingHorizontal || 15,
+            paddingBottom: paddingBottom || 50,
         }}
     >
         <ScrollView
