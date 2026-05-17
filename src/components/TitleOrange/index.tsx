@@ -1,6 +1,6 @@
 import { Text } from "react-native";
 import { COLORS, FONTS } from "../../styles/styles";
-import { TitleOrangeType } from "../../types/TitleBrownType";
+import { TitleOrangeType } from "../../types/TitleOrangeType";
 
 export default function TitleOrange({ title, fontSize }: TitleOrangeType) {
   return (
