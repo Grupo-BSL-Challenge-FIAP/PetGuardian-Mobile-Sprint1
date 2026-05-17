@@ -1,20 +1,51 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
-import { COLORS, FONTS } from "../../styles/styles";
+import { BACKGROUND, COLORS, FONTS } from "../../styles/styles";
 import TitleOrange from "../../components/TitleOrange";
 import SubTitleOrange from "../../components/SubTitleOrange";
+import ButtonLink from "../../components/ButtonLink";
+
 
 export default function HomeLoginCadastroScreen() {
+
+
   return (
     <LayoutWrapper paddingHorizontal={30}>
         <View 
           style={{
             flex: 1,
             justifyContent: 'flex-end',
+            gap: 50,
           }}
         >
-          <TitleOrange title={`Boas vindas ao\nPet Guardian!`} />
-          <SubTitleOrange title={`Faça login ou cadastre-se para começar a cuidar do seu pet!`} />
+          <View
+            style={{
+              gap: 15
+            }}
+          >
+            <TitleOrange title={`Boas vindas ao\nPet Guardian!`} />
+            <SubTitleOrange title={`Faça login ou cadastre-se para começar a cuidar do seu pet!`} />
+          </View>
+          <View 
+            style={{
+              gap: 19,
+            }}
+          >
+            <ButtonLink
+              route="LoginScreen"
+              backgroundColor={COLORS.orange[900]}
+              colorText={COLORS.orange[100]}
+            >
+              Entrar na conta
+            </ButtonLink>
+            <ButtonLink
+              route="RegisterScreen"
+              backgroundColor={BACKGROUND.backgroundMain}
+              colorText={COLORS.orange[900]}
+            >
+              Fazer cadastro
+            </ButtonLink>
+          </View>
         </View>
     </LayoutWrapper>
   );
