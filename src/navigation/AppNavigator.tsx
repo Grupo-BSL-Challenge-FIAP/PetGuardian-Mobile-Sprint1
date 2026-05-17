@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeLoginCadastro from "../screens/HomeLoginCadastro";
+import HomeLoginCadastroScreen from "../screens/HomeLoginCadastroScreen";
 
 export type RootStackParamList = {
-  HomeLoginCadastro: undefined;
+  HomeLoginCadastroScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -10,11 +10,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function AppNavigator() {
   return (
       <Stack.Navigator
-        initialRouteName='HomeLoginCadastro'
+        initialRouteName='HomeLoginCadastroScreen'
       >
         <Stack.Screen 
-            name="HomeLoginCadastro"
-            component={HomeLoginCadastro}
+            name="HomeLoginCadastroScreen"
+            component={HomeLoginCadastroScreen}
             options={({ navigation }) => ({
               headerShown: false
             })}    
