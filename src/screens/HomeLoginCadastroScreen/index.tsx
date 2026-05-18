@@ -7,8 +7,6 @@ import ButtonLink from "../../components/ButtonLink";
 
 
 export default function HomeLoginCadastroScreen() {
-
-
   return (
     <LayoutWrapper paddingHorizontal={30}>
         <View 
@@ -39,7 +37,7 @@ export default function HomeLoginCadastroScreen() {
               Entrar na conta
             </ButtonLink>
             <ButtonLink
-              route="RegisterScreen"
+              route="ResponsibleRegisterScreen"
               backgroundColor={BACKGROUND.backgroundMain}
               colorText={COLORS.orange[900]}
             >
