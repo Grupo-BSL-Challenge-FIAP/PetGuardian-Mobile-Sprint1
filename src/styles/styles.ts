@@ -18,6 +18,13 @@ export const COLORS = {
         100: '#FFFFFF',
         200: '#F2F2F2',
         300: '#FAFAFA'
+    },
+
+    // Red
+    red: {
+        100: '#f8d7da',
+        200: '#f5c2c7',
+        500: '#FF0000',
     }
 }
 
