@@ -3,7 +3,7 @@ import TitleOrange from "../TitleOrange";
 import { COLORS, FONTS } from "../../styles/styles";
 import { InputFormType } from "../../types/InputFormType";
 
-export default function InputForm({ label, placeholder, icon, ...rest }: InputFormType) {
+export default function InputForm({ label, placeholder, icon, marginBottom, ...rest }: InputFormType) {
   return (
     <View>
       <TitleOrange title={label} fontSize={20} />
@@ -18,6 +18,7 @@ export default function InputForm({ label, placeholder, icon, ...rest }: InputFo
           padding: 13,
           marginVertical: 10,
           fontFamily: FONTS.poppins[500],
+          marginBottom: marginBottom || 30,
         }}
       />
       <View 
