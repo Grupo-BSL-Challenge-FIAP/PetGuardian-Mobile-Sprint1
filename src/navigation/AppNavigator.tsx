@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeLoginCadastroScreen from "../screens/HomeLoginCadastroScreen";
 import LoginScreen from "../screens/LoginScreen";
-import RegisterScreen from "../screens/RegisterScreen";
 import PetRegisterScreen from "../screens/PetRegisterScreen";
+import ResponsibleRegisterScreen from "../screens/ResponsibleRegisterScreen";
 
 export type RootStackParamList = {
   HomeLoginCadastroScreen: undefined;
   LoginScreen: undefined;
-  RegisterScreen: undefined;
+  ResponsibleRegisterScreen: undefined;
   PetRegisterScreen: undefined;
 };
 
@@ -35,8 +35,8 @@ export default function AppNavigator() {
         />
 
         <Stack.Screen 
-            name="RegisterScreen"
-            component={RegisterScreen}
+            name="ResponsibleRegisterScreen"
+            component={ResponsibleRegisterScreen}
             options={({ navigation }) => ({
               headerShown: false
             })}    
