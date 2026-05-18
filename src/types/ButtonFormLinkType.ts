@@ -1,5 +1,3 @@
-import { RootStackParamList } from "../navigation/AppNavigator";
-
 export interface ButtonFormLinkType {
   onPress?: () => void;
   paddingVertical?: number;
