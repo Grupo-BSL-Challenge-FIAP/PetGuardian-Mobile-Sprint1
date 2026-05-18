@@ -5,4 +5,5 @@ export interface InputFormType extends TextInputProps {
     label: string;
     icon?: React.ReactNode;
     marginBottom?: number;
+    error?: boolean;
 }
