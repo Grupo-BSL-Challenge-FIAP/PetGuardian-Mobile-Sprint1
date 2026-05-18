@@ -12,6 +12,13 @@ export const COLORS = {
         700: '#983C1B',
         900: '#4A1B0C',
     },
+
+    // White
+    white: {
+        100: '#FFFFFF',
+        200: '#F2F2F2',
+        300: '#FAFAFA'
+    }
 }
 
 export const FONTS = {
