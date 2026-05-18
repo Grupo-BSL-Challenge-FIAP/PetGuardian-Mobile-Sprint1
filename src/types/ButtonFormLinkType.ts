@@ -1,4 +1,4 @@
-export interface ButtonType {
+export interface ButtonFormLinkType {
     onPress: () => void;
     backgroundColor?: string;
     paddingVertical?: number;

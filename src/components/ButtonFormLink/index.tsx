@@ -1,8 +1,8 @@
 import { Pressable, Text } from "react-native";
 import { COLORS } from "../../styles/styles";
-import { ButtonType } from "../../types/ButtonType";
+import { ButtonFormLinkType } from "../../types/ButtonFormLinkType";
 
-export default function Button({
+export default function ButtonFormLink({
   onPress,
   backgroundColor,
   paddingVertical,
@@ -13,7 +13,7 @@ export default function Button({
   children,
   colorText,
   fontSizeText,
-}: ButtonType) {
+}: ButtonFormLinkType) {
   return (
     <Pressable
       onPress={onPress}
