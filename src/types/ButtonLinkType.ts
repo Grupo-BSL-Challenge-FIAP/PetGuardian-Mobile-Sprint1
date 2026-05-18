@@ -12,4 +12,7 @@ export interface ButtonLinkType {
   borderColor?: string;
   borderWidth?: number;
   children: React.ReactNode;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  gapTextIcon?: number;
 }
