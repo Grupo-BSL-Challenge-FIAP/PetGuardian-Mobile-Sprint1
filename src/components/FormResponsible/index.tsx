@@ -21,6 +21,7 @@ export default function FormResponsible() {
   const [birthDate, setBirthDate] = useState("");
   const [cpf, setCpf] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [messageError, setMessageError] = useState("");
@@ -29,6 +30,7 @@ export default function FormResponsible() {
     birthDate: false,
     cpf: false,
     phone: false,
+    email: false,
     password: false,
     confirmPassword: false,
   });
@@ -84,11 +86,13 @@ export default function FormResponsible() {
       birthDate: false,
       cpf: false,
       phone: false,
+      email: false,
       password: false,
       confirmPassword: false,
     };
 
     const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
 
     const birthDateParts = birthDate.split("/");
@@ -162,6 +166,20 @@ export default function FormResponsible() {
       return false;
     }
 
+    if (!email.trim()) {
+      newErrors.email = true;
+      setErrors(newErrors);
+      setMessageError("O e-mail é obrigatório.");
+      return false;
+    }
+
+    if (!emailRegex.test(email)) {
+      newErrors.email = true;
+      setErrors(newErrors);
+      setMessageError("Formato de e-mail inválido. Exemplo: example@gmail.com");
+      return false;
+    }
+
     if (!password.trim()) {
       newErrors.password = true;
       setErrors(newErrors);
@@ -202,6 +220,7 @@ export default function FormResponsible() {
         birthDate,
         cpf,
         phone,
+        email,
         password,
       };
 
@@ -209,6 +228,9 @@ export default function FormResponsible() {
         "@petguardian:responsibleData", 
         JSON.stringify(responsibleData)
       );
+
+      const saveResponsible = await AsyncStorage.getItem("@petguardian:responsibleData");
+      console.log("Dados do responsável salvos:", JSON.parse(saveResponsible || "{}"));
 
     } catch (error) {
       setMessageError("Ocorreu um erro ao salvar os dados. Tente novamente.");
@@ -224,6 +246,7 @@ export default function FormResponsible() {
   setName("");
   setBirthDate("");
   setCpf("");
+  setEmail("");
   setPhone("");
   setPassword("");
   setConfirmPassword("");
@@ -284,6 +307,14 @@ export default function FormResponsible() {
           value={phone}
           onChangeText={handlePhoneChange}
           error={errors.phone}
+        />
+
+        <InputForm
+          label="E-mail *"
+          placeholder="example@gmail.com"
+          value={email}
+          onChangeText={setEmail}
+          error={errors.email}
         />
 
         <InputForm
