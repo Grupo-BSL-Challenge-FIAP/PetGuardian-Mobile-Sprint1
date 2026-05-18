@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import InputForm from "../InputForm";
 import ContainerTitleSubTitle from "../ContainerTitleSubTitle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { COLORS, FONTS } from "../../styles/styles";
 import ContainerForm from "../ContainerForm";
@@ -10,8 +10,13 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import TextLink from "../TextLink";
 import ButtonFormLink from "../ButtonFormLink";
 import AlertMessageError from "../AlertMessageError";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { RootStackParamList } from "../../navigation/AppNavigator";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FormResponsible() {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [name, setName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [cpf, setCpf] = useState("");
@@ -190,6 +195,42 @@ export default function FormResponsible() {
     return true;
   };
 
+  const saveDataResponsibleData = async () => {
+    try {
+      const responsibleData = {
+        name,
+        birthDate,
+        cpf,
+        phone,
+        password,
+      };
+
+      await AsyncStorage.setItem(
+        "@petguardian:responsibleData", 
+        JSON.stringify(responsibleData)
+      );
+
+    } catch (error) {
+      setMessageError("Ocorreu um erro ao salvar os dados. Tente novamente.");
+    }
+  }
+
+  const handleFormSubmit = async () => {
+  const isValid = validateForm();
+
+  if (!isValid) return;
+
+  await saveDataResponsibleData();
+  setName("");
+  setBirthDate("");
+  setCpf("");
+  setPhone("");
+  setPassword("");
+  setConfirmPassword("");
+
+  navigation.navigate("PetRegisterScreen");
+};
+
   return (
     <View
       style={{
@@ -279,8 +320,7 @@ export default function FormResponsible() {
           }}
         >
           <ButtonFormLink
-            route={"PetRegisterScreen"}
-            functionValidationError={validateForm}
+            onPress={handleFormSubmit}
             backgroundColor={COLORS.orange[900]}
             colorText={COLORS.white[300]}
             fontFamily={FONTS.poppins[700]}
