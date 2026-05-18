@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../navigation/AppNavigator";
 
 export default function ButtonFormLink({
-  route,
+  onPress,
   paddingVertical,
   alignItems,
   borderRadius,
@@ -19,20 +19,13 @@ export default function ButtonFormLink({
   children,
   iconLeft,
   iconRight,
-  functionValidationError,
 }: ButtonFormLinkType) {
 
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <Pressable
-      onPress={() => {
-        const isValid = functionValidationError();
-
-        if (isValid) {
-          navigation.navigate(route);
-        }
-      }}
+      onPress={onPress}
       style={{
         backgroundColor: backgroundColor || COLORS.orange[900],
         paddingVertical: paddingVertical || 11,
