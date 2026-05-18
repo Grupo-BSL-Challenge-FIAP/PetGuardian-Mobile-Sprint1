@@ -1,11 +1,11 @@
-import { TextInput } from "react-native";
+import { TextInput, View } from "react-native";
 import TitleOrange from "../TitleOrange";
 import { COLORS, FONTS } from "../../styles/styles";
 import { InputFormType } from "../../types/InputFormType";
 
-export default function InputForm({ label, placeholder, ...rest }: InputFormType) {
+export default function InputForm({ label, placeholder, icon, ...rest }: InputFormType) {
   return (
-    <>
+    <View>
       <TitleOrange title={label} fontSize={20} />
       <TextInput
         placeholder={placeholder}
@@ -20,6 +20,15 @@ export default function InputForm({ label, placeholder, ...rest }: InputFormType
           fontFamily: FONTS.poppins[500],
         }}
       />
-    </>
+      <View 
+        style={{
+          position: "absolute",
+          right: 11,
+          top: 60,
+        }}
+      >
+        {icon}
+      </View>
+    </View>
   );
 }
