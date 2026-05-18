@@ -3,17 +3,17 @@ import TitleOrange from "../TitleOrange";
 import { COLORS, FONTS } from "../../styles/styles";
 import { InputFormType } from "../../types/InputFormType";
 
-export default function InputForm({ label, placeholder, icon, marginBottom, ...rest }: InputFormType) {
+export default function InputForm({ label, placeholder, icon, marginBottom, error, ...rest }: InputFormType) {
   return (
     <View>
       <TitleOrange title={label} fontSize={20} />
       <TextInput
         placeholder={placeholder}
-        placeholderTextColor={COLORS.orange[700]}
+        placeholderTextColor={error ? COLORS.red[500] : COLORS.orange[300]}
         {...rest}
         style={{
           borderWidth: 2,
-          borderColor: COLORS.orange[900],
+          borderColor: error ? COLORS.red[500] : COLORS.orange[900],
           borderRadius: 15,
           padding: 13,
           marginVertical: 10,
