@@ -1,10 +1,13 @@
 import { View } from "react-native";
 import InputForm from "../InputForm";
-import { SafeAreaView } from "react-native-safe-area-context";
 import ContainerTitleSubTitle from "../ContainerTitleSubTitle";
 import { useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { COLORS } from "../../styles/styles";
+import { COLORS, FONTS } from "../../styles/styles";
+import ContainerForm from "../ContainerForm";
+import ButtonLink from "../ButtonLink";
+import AntDesign from '@expo/vector-icons/AntDesign';
+import TextLink from "../TextLink";
 
 export default function FormResponsible() {
   const [name, setName] = useState("");
@@ -52,10 +55,7 @@ export default function FormResponsible() {
     cleaned = cleaned.slice(0, 11);
 
     if (cleaned.length > 6) {
-      cleaned = cleaned.replace(
-        /(\d{2})(\d{5})(\d{1,4})/,
-        "($1) $2-$3",
-      );
+      cleaned = cleaned.replace(/(\d{2})(\d{5})(\d{1,4})/, "($1) $2-$3");
     } else if (cleaned.length > 2) {
       cleaned = cleaned.replace(/(\d{2})(\d{1,5})/, "($1) $2");
     }
@@ -76,12 +76,7 @@ export default function FormResponsible() {
         textSubTitle="Campos marcados com * são obrigatórios."
       />
 
-      <View
-        style={{
-          paddingHorizontal: 23,
-          gap: 30,
-        }}
-      >
+      <ContainerForm>
         <InputForm
           label="Nome completo *"
           placeholder="Digite seu nome completo"
@@ -130,8 +125,31 @@ export default function FormResponsible() {
           placeholder="Repita a senha"
           value={confirmPassword}
           onChangeText={setConfirmPassword}
+          marginBottom={10}
         />
-      </View>
+
+        <TextLink 
+          route={"LoginScreen"}
+          textLink="Já tem uma conta? Clique aqui."
+        />
+
+        <View 
+          style={{
+            marginTop: 50,
+          }}
+        >
+          <ButtonLink
+            route={"PetRegisterScreen"}
+            backgroundColor={COLORS.orange[900]}
+            colorText={COLORS.white[300]}
+            fontFamily={FONTS.poppins[700]}
+            paddingVertical={7}
+            iconRight={<AntDesign name="arrow-right" size={26} color={COLORS.white[300]} />}
+          >
+            Continuar
+          </ButtonLink>
+        </View>
+      </ContainerForm>
     </View>
   );
 }
