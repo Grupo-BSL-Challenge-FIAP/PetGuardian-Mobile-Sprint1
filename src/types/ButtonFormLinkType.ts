@@ -1,12 +1,18 @@
+import { RootStackParamList } from "../navigation/AppNavigator";
+
 export interface ButtonFormLinkType {
-    onPress: () => void;
-    backgroundColor?: string;
-    paddingVertical?: number;
-    alignItems?: "center" | "flex-start" | "flex-end";
-    borderRadius?: number;
-    borderWidth?: number;
-    borderColor?: string;
-    children: React.ReactNode;
-    colorText?: string;
-    fontSizeText?: number;
+  route: keyof RootStackParamList;
+  paddingVertical?: number;
+  alignItems?: "center" | "flex-start" | "flex-end";
+  borderRadius?: number;
+  backgroundColor?: string;
+  fontFamily?: string;
+  fontSize?: number;
+  colorText?: string;
+  borderColor?: string;
+  borderWidth?: number;
+  children: React.ReactNode;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  functionValidationError: () => void | boolean;
 }
