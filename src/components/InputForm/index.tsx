@@ -1,0 +1,25 @@
+import { TextInput } from "react-native";
+import TitleOrange from "../TitleOrange";
+import { COLORS, FONTS } from "../../styles/styles";
+import { InputFormType } from "../../types/InputFormType";
+
+export default function InputForm({ label, placeholder, ...rest }: InputFormType) {
+  return (
+    <>
+      <TitleOrange title={label} fontSize={20} />
+      <TextInput
+        placeholder={placeholder}
+        placeholderTextColor={COLORS.orange[700]}
+        {...rest}
+        style={{
+          borderWidth: 2,
+          borderColor: COLORS.orange[900],
+          borderRadius: 15,
+          padding: 13,
+          marginVertical: 10,
+          fontFamily: FONTS.poppins[500],
+        }}
+      />
+    </>
+  );
+}
