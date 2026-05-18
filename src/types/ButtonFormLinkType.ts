@@ -1,7 +1,7 @@
 import { RootStackParamList } from "../navigation/AppNavigator";
 
 export interface ButtonFormLinkType {
-  route: keyof RootStackParamList;
+  onPress?: () => void;
   paddingVertical?: number;
   alignItems?: "center" | "flex-start" | "flex-end";
   borderRadius?: number;
@@ -14,5 +14,4 @@ export interface ButtonFormLinkType {
   children: React.ReactNode;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
-  functionValidationError: () => void | boolean;
 }
