@@ -20,8 +20,9 @@ export default function LayoutWrapper({ children, paddingHorizontal, paddingBott
         }}
     >
         <ScrollView
+            showsVerticalScrollIndicator={false}
             contentContainerStyle={{
-                flex: 1,
+                flexGrow: 1,
             }}
         >
             {children}
