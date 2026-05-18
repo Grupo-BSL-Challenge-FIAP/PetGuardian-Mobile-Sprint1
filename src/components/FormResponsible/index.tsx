@@ -74,7 +74,6 @@ export default function FormResponsible() {
   };
 
   const validateForm = () => {
-
     const newErrors = {
       name: false,
       birthDate: false,
@@ -84,55 +83,110 @@ export default function FormResponsible() {
       confirmPassword: false,
     };
 
+    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
+
+    const birthDateParts = birthDate.split("/");
+    const day = Number(birthDateParts[0]);
+    const month = Number(birthDateParts[1]);
+    const year = Number(birthDateParts[2]);
+    const parsedBirthDate = new Date(year, month - 1, day);
+    const today = new Date();
+
     if (!name.trim()) {
       newErrors.name = true;
-
       setErrors(newErrors);
-      setMessageError("Preencha o nome completo.");
+      setMessageError("O nome completo é obrigatório.");
       return false;
     }
 
-    if (birthDate.length < 10) {
+    if (name.trim().length < 3 || name.trim().length > 100) {
+      newErrors.name = true;
+      setErrors(newErrors);
+      setMessageError("O nome deve ter entre 3 e 100 caracteres.");
+      return false;
+    }
+
+    if (!birthDate.trim()) {
       newErrors.birthDate = true;
-
       setErrors(newErrors);
-      setMessageError("Preencha uma data de nascimento válida.");
+      setMessageError("A data de nascimento é obrigatória.");
       return false;
     }
 
-    if (cpf.length < 14) {
+    if (
+      birthDate.length !== 10 ||
+      parsedBirthDate.getDate() !== day ||
+      parsedBirthDate.getMonth() !== month - 1 ||
+      parsedBirthDate.getFullYear() !== year ||
+      parsedBirthDate >= today
+    ) {
+      newErrors.birthDate = true;
+      setErrors(newErrors);
+      setMessageError(
+        "A data de nascimento deve ser válida e estar no passado.",
+      );
+      return false;
+    }
+
+    if (!cpf.trim()) {
       newErrors.cpf = true;
-
       setErrors(newErrors);
-      setMessageError("Preencha um CPF válido.");
+      setMessageError("O CPF é obrigatório.");
       return false;
     }
 
-    if (phone.length < 15) {
+    if (!cpfRegex.test(cpf)) {
+      newErrors.cpf = true;
+      setErrors(newErrors);
+      setMessageError("O CPF deve seguir o formato 000.000.000-00.");
+      return false;
+    }
+
+    if (!phone.trim()) {
       newErrors.phone = true;
-
-
       setErrors(newErrors);
-      setMessageError("Preencha um telefone válido.");
+      setMessageError("O número de telefone é obrigatório.");
       return false;
     }
 
-    if (password.length < 6) {
-      newErrors.password = true;
-
+    if (phone.length < 14) {
+      newErrors.phone = true;
       setErrors(newErrors);
-      setMessageError("A senha deve ter no mínimo 6 caracteres.");
+      setMessageError("Informe um telefone válido.");
+      return false;
+    }
+
+    if (!password.trim()) {
+      newErrors.password = true;
+      setErrors(newErrors);
+      setMessageError("A senha é obrigatória.");
+      return false;
+    }
+
+    if (password.length < 8 || password.length > 20) {
+      newErrors.password = true;
+      setErrors(newErrors);
+      setMessageError("A senha deve ter entre 8 e 20 caracteres.");
+      return false;
+    }
+
+    if (!passwordRegex.test(password)) {
+      newErrors.password = true;
+      setErrors(newErrors);
+      setMessageError("A senha deve conter pelo menos uma letra e um número.");
       return false;
     }
 
     if (password !== confirmPassword) {
       newErrors.confirmPassword = true;
-      
       setErrors(newErrors);
       setMessageError("As senhas não conferem.");
       return false;
     }
 
+    setErrors(newErrors);
+    setMessageError("");
     return true;
   };
 
