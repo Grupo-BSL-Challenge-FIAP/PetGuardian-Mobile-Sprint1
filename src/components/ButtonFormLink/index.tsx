@@ -8,6 +8,8 @@ import { RootStackParamList } from "../../navigation/AppNavigator";
 export default function ButtonFormLink({
   onPress,
   paddingVertical,
+  marginHorizontal,
+  marginTop,
   alignItems,
   borderRadius,
   backgroundColor,
@@ -29,6 +31,8 @@ export default function ButtonFormLink({
       style={{
         backgroundColor: backgroundColor || COLORS.orange[900],
         paddingVertical: paddingVertical || 11,
+        marginHorizontal: marginHorizontal || 0,
+        marginTop: marginTop || 0,
         alignItems: alignItems || "center",
         borderRadius: borderRadius || 15,
         borderWidth: borderWidth || 3,
