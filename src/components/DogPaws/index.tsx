@@ -18,7 +18,7 @@ export default function DogPaws() {
           width: "100%",
           height: "100%",
           resizeMode: "cover",
-          opacity: 0.75,
+          opacity: 0.30,
         }}
       />
     </View>
