@@ -60,6 +60,7 @@ export default function AccountCreationConfirmationScreen() {
         <ContainerTitleSubTitle
           textTitle="Tudo certo!"
           textSubTitle="Confira se os dados estão certos:"
+          fontSizeSubTitle={15}
         />
         <DataConfirmationCard title="Responsável:">
           <ContainerTitleSubTitle
