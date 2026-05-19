@@ -254,14 +254,6 @@ export default function FormResponsible() {
   if (!isValid) return;
 
   await saveDataResponsibleData();
-  setName("");
-  setBirthDate("");
-  setCpf("");
-  setAddress("");
-  setEmail("");
-  setPhone("");
-  setPassword("");
-  setConfirmPassword("");
 
   navigation.navigate("PetRegisterScreen");
 };
