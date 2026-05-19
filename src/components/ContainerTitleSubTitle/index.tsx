@@ -12,11 +12,11 @@ export default function ContainerTitleSubTitle({ alignItems, textTitle, textSubT
       }}
     >
       <TitleOrange
-        title={`Insira seus dados\npara continuar:`}
+        title={textTitle}
         textAlign="center"
       />
       <SubTitleOrange
-        title="Campos marcados com * são obrigatórios."
+        title={textSubTitle}
         fontFamily={FONTS.poppins[400]}
         fontSize={15}
       />
