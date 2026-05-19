@@ -4,14 +4,23 @@ import SubTitleOrange from "../SubTitleOrange";
 import { FONTS } from "../../styles/styles";
 import { ContainerTitleSubTitleType } from "../../types/ContainerTitleSubTitleType";
 
-export default function ContainerTitleSubTitle({ alignItems, textTitle, textSubTitle, fontSizeTiTleOrange, fontSizeSubTitle, flexDirection, gap }: ContainerTitleSubTitleType) {
+export default function ContainerTitleSubTitle({
+  alignItems,
+  textTitle,
+  textSubTitle,
+  fontSizeTiTleOrange,
+  fontSizeSubTitle,
+  flexDirection,
+  gap,
+  flewWrap,
+}: ContainerTitleSubTitleType) {
   return (
     <View
       style={{
         alignItems: alignItems || "center",
         flexDirection: flexDirection || "column",
         gap: gap,
-        flexWrap: "wrap",
+        flexWrap: flewWrap,
       }}
     >
       <TitleOrange
