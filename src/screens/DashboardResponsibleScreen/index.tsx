@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
 
-export default function DashboardResponsible() {
+export default function DashboardResponsibleScreen() {
   return (
     <LayoutWrapper>
       <Text>Dashboard do Responsável</Text>
