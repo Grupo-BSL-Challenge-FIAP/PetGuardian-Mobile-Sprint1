@@ -21,6 +21,7 @@ export default function FormResponsible() {
   const [birthDate, setBirthDate] = useState("");
   const [cpf, setCpf] = useState("");
   const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -30,6 +31,7 @@ export default function FormResponsible() {
     birthDate: false,
     cpf: false,
     phone: false,
+    address: false,
     email: false,
     password: false,
     confirmPassword: false,
@@ -86,6 +88,7 @@ export default function FormResponsible() {
       birthDate: false,
       cpf: false,
       phone: false,
+      address: false,
       email: false,
       password: false,
       confirmPassword: false,
@@ -166,6 +169,13 @@ export default function FormResponsible() {
       return false;
     }
 
+    if (!address.trim()) {
+      newErrors.address = true;
+      setErrors(newErrors);
+      setMessageError("O endereço é obrigatório.");
+      return false;
+    }
+
     if (!email.trim()) {
       newErrors.email = true;
       setErrors(newErrors);
@@ -220,6 +230,7 @@ export default function FormResponsible() {
         birthDate,
         cpf,
         phone,
+        address,
         email,
         password,
       };
@@ -246,6 +257,7 @@ export default function FormResponsible() {
   setName("");
   setBirthDate("");
   setCpf("");
+  setAddress("");
   setEmail("");
   setPhone("");
   setPassword("");
@@ -307,6 +319,14 @@ export default function FormResponsible() {
           value={phone}
           onChangeText={handlePhoneChange}
           error={errors.phone}
+        />
+
+        <InputForm
+          label="Endereço *"
+          placeholder="Ex: Rua dos Animais, 123, São Paulo - SP"
+          value={address}
+          onChangeText={setAddress}
+          error={errors.address}
         />
 
         <InputForm
