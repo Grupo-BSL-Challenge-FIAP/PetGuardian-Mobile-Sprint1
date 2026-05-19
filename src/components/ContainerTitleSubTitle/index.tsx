@@ -11,7 +11,6 @@ export default function ContainerTitleSubTitle({ alignItems, textTitle, textSubT
         alignItems: alignItems || "center",
         flexDirection: flexDirection || "column",
         gap: gap,
-        alignContent: "center",
       }}
     >
       <TitleOrange
