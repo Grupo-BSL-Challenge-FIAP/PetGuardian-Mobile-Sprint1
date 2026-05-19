@@ -185,7 +185,7 @@ export default function FormPet() {
 
     await saveDataPetData();
 
-    navigation.navigate("HomeLoginCadastroScreen");
+    navigation.navigate("AccountCreationConfirmationScreen");
   };
 
   return (
@@ -197,8 +197,10 @@ export default function FormPet() {
       }}
     >
       <ContainerTitleSubTitle
+        alignItems="center"
         textTitle={`Agora insira os\ndados do seu pet:`}
         textSubTitle="Campos marcados com * são obrigatórios."
+        fontSizeSubTitle={15}
       />
 
       <ContainerForm>
