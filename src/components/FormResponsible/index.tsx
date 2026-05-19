@@ -270,6 +270,7 @@ export default function FormResponsible() {
         alignItems="center"
         textTitle={`Insira seus dados\npara continuar:`}
         textSubTitle="Campos marcados com * são obrigatórios."
+        fontSizeSubTitle={15}
       />
 
       <ContainerForm>
