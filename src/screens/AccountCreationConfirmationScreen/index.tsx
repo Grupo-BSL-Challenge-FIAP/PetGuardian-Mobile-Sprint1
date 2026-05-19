@@ -25,15 +25,15 @@ export default function AccountCreationConfirmationScreen() {
     name: "",
     species: "",
     breed: "",
-    sex: "",
+    gender: "",
     birthDate: "",
     weight: "",
   })
 
   useEffect(() => {
     const loadStorageData = async () => {
-      const responsibleData = await AsyncStorage.getItem("@petGuardian:responsible");
-      const petData = await AsyncStorage.getItem("@petGuardian:pet");
+      const responsibleData = await AsyncStorage.getItem("@petguardian:responsibleData");
+      const petData = await AsyncStorage.getItem("@petguardian:petData");
 
       if(responsibleData) {
         setResponsible(JSON.parse(responsibleData));
@@ -140,7 +140,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Sexo: "
-            textSubTitle={pet.sex} 
+            textSubTitle={pet.gender} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
