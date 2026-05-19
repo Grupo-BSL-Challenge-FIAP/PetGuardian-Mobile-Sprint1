@@ -8,7 +8,7 @@ import ButtonLink from "../../components/ButtonLink";
 
 export default function HomeLoginCadastroScreen() {
   return (
-    <LayoutWrapper paddingHorizontal={30}>
+    <LayoutWrapper paddingHorizontal={30} isDogPaws={true}>
         <View 
           style={{
             flex: 1,
