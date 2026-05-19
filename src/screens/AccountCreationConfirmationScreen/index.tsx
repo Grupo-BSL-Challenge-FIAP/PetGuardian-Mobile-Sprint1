@@ -6,9 +6,10 @@ import HeaderForm from "../../components/HeaderForm";
 import ButtonFormLink from "../../components/ButtonFormLink";
 import Feather from '@expo/vector-icons/Feather';
 import { COLORS } from "../../styles/styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ResponsibleType } from "../../types/ResponsibleType";
 import { PetType } from "../../types/PetType";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AccountCreationConfirmationScreen() {
 
@@ -29,6 +30,23 @@ export default function AccountCreationConfirmationScreen() {
     weight: "",
   })
 
+  useEffect(() => {
+    const loadStorageData = async () => {
+      const responsibleData = await AsyncStorage.getItem("@petGuardian:responsible");
+      const petData = await AsyncStorage.getItem("@petGuardian:pet");
+
+      if(responsibleData) {
+        setResponsible(JSON.parse(responsibleData));
+      }
+
+      if(petData) {
+        setPet(JSON.parse(petData));
+      }
+    
+    }
+    loadStorageData();
+  }, [])
+
   return (
     <LayoutWrapper isDogPawBottomTop={true}>
       <View
@@ -47,7 +65,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Nome: "
-            textSubTitle="Moisés" 
+            textSubTitle={responsible.name} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -56,7 +74,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Data de nascimento: "
-            textSubTitle="03/07/1805" 
+            textSubTitle={responsible.birthDate} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -65,7 +83,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="CPF: "
-            textSubTitle="123.456.789-00" 
+            textSubTitle={responsible.cpf} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -74,7 +92,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Telefone: "
-            textSubTitle="(11) 91234-5678" 
+            textSubTitle={responsible.phone} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -83,7 +101,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Endereço: "
-            textSubTitle="Rua Exemplo," 
+            textSubTitle={responsible.address} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -94,7 +112,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Nome: "
-            textSubTitle="Moisés" 
+            textSubTitle={pet.name} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -103,7 +121,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Espécie: "
-            textSubTitle="03/07/1805" 
+            textSubTitle={pet.species} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -112,7 +130,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Raça: "
-            textSubTitle="123.456.789-00" 
+            textSubTitle={pet.breed} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -121,7 +139,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Sexo: "
-            textSubTitle="(11) 91234-5678" 
+            textSubTitle={pet.sex} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -130,7 +148,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Nascimento: "
-            textSubTitle="Rua Exemplo," 
+            textSubTitle={pet.birthDate} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
@@ -139,7 +157,7 @@ export default function AccountCreationConfirmationScreen() {
           <ContainerTitleSubTitle
             alignItems="center"
             textTitle="Peso: "
-            textSubTitle="Rua Exemplo," 
+            textSubTitle={pet.weight} 
             fontSizeTiTleOrange={18}
             fontSizeSubTitle={18}
             flexDirection="row"
