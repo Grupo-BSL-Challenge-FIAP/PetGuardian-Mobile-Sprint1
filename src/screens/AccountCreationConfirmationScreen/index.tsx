@@ -10,8 +10,13 @@ import { useEffect, useState } from "react";
 import { ResponsibleType } from "../../types/ResponsibleType";
 import { PetType } from "../../types/PetType";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { RootStackParamList } from "../../navigation/AppNavigator";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 
 export default function AccountCreationConfirmationScreen() {
+
+  const navigate = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   const [responsible, setResponsible] = useState<ResponsibleType>({
     name: "",
@@ -46,6 +51,17 @@ export default function AccountCreationConfirmationScreen() {
     }
     loadStorageData();
   }, [])
+
+  const handleCreateAccount = () => {
+    const newAccountData = {
+      responsible,
+      pet,
+    }
+
+    console.log("Dados da nova conta:", newAccountData);
+
+    navigate.navigate("DashboardResponsibleScreen");
+  }
 
   return (
     <LayoutWrapper isDogPawBottomTop={true}>
@@ -166,6 +182,7 @@ export default function AccountCreationConfirmationScreen() {
           />
         </DataConfirmationCard>
         <ButtonFormLink 
+            onPress={handleCreateAccount}
             marginHorizontal={20}
             marginTop={20}
             iconLeft={<Feather name="user-plus" size={35} color={COLORS.white[100]} />}
