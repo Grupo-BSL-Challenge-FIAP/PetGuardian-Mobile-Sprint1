@@ -6,7 +6,7 @@ import FormResponsible from "../../components/FormResponsible";
 
 export default function ResponsibleRegisterScreen() {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper isDogPawBottomTop={true}>
       <View
         style={{
           flexDirection: "row",
