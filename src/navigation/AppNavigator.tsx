@@ -5,6 +5,7 @@ import PetRegisterScreen from "../screens/PetRegisterScreen";
 import ResponsibleRegisterScreen from "../screens/ResponsibleRegisterScreen";
 import AccountCreationConfirmationScreen from "../screens/AccountCreationConfirmationScreen";
 import DashboardResponsibleScreen from "../screens/DashboardResponsibleScreen";
+import AuthenticationCodeScreen from "../screens/AuthenticationCodeScreen";
 
 export type RootStackParamList = {
   HomeLoginCadastroScreen: undefined;
@@ -13,6 +14,7 @@ export type RootStackParamList = {
   PetRegisterScreen: undefined;
   AccountCreationConfirmationScreen: undefined;
   DashboardResponsibleScreen: undefined;
+  AuthenticationCodeScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -65,6 +67,14 @@ export default function AppNavigator() {
         <Stack.Screen 
             name="DashboardResponsibleScreen"
             component={DashboardResponsibleScreen}
+            options={({ navigation }) => ({
+              headerShown: false
+            })}    
+        />
+
+        <Stack.Screen 
+            name="AuthenticationCodeScreen"
+            component={AuthenticationCodeScreen}
             options={({ navigation }) => ({
               headerShown: false
             })}    
