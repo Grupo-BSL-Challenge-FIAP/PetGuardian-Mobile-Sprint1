@@ -1,14 +1,15 @@
 import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BACKGROUND } from "../../styles/styles";
-
+import DogPaws from "../DogPaws";
 export interface LayoutWrapperProps {
     children: React.ReactNode;
     paddingHorizontal?: number;
     paddingBottom?: number;
+    isDogPaws?: boolean;
 }
 
-export default function LayoutWrapper({ children, paddingHorizontal, paddingBottom }: LayoutWrapperProps) {
+export default function LayoutWrapper({ children, paddingHorizontal, paddingBottom, isDogPaws= false }: LayoutWrapperProps) {
   return (
     <>
     <SafeAreaView 
@@ -19,6 +20,8 @@ export default function LayoutWrapper({ children, paddingHorizontal, paddingBott
             paddingBottom: paddingBottom || 50,
         }}
     >
+        {isDogPaws && <DogPaws />}
+        
         <ScrollView
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{
