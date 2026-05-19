@@ -3,12 +3,14 @@ import HomeLoginCadastroScreen from "../screens/HomeLoginCadastroScreen";
 import LoginScreen from "../screens/LoginScreen";
 import PetRegisterScreen from "../screens/PetRegisterScreen";
 import ResponsibleRegisterScreen from "../screens/ResponsibleRegisterScreen";
+import AccountCreationConfirmationScreen from "../screens/AccountCreationConfirmationScreen";
 
 export type RootStackParamList = {
   HomeLoginCadastroScreen: undefined;
   LoginScreen: undefined;
   ResponsibleRegisterScreen: undefined;
   PetRegisterScreen: undefined;
+  AccountCreationConfirmationScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -45,6 +47,14 @@ export default function AppNavigator() {
         <Stack.Screen 
             name="PetRegisterScreen"
             component={PetRegisterScreen}
+            options={({ navigation }) => ({
+              headerShown: false
+            })}    
+        />
+
+        <Stack.Screen 
+            name="AccountCreationConfirmationScreen"
+            component={AccountCreationConfirmationScreen}
             options={({ navigation }) => ({
               headerShown: false
             })}    
