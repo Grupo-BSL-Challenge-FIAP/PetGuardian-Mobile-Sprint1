@@ -4,21 +4,25 @@ import SubTitleOrange from "../SubTitleOrange";
 import { FONTS } from "../../styles/styles";
 import { ContainerTitleSubTitleType } from "../../types/ContainerTitleSubTitleType";
 
-export default function ContainerTitleSubTitle({ alignItems, textTitle, textSubTitle }: ContainerTitleSubTitleType) {
+export default function ContainerTitleSubTitle({ alignItems, textTitle, textSubTitle, fontSizeTiTleOrange, fontSizeSubTitle, flexDirection, gap }: ContainerTitleSubTitleType) {
   return (
     <View
       style={{
         alignItems: alignItems || "center",
+        flexDirection: flexDirection || "column",
+        gap: gap,
+        alignContent: "center",
       }}
     >
       <TitleOrange
         title={textTitle}
         textAlign="center"
+        fontSize={fontSizeTiTleOrange}
       />
       <SubTitleOrange
         title={textSubTitle}
         fontFamily={FONTS.poppins[400]}
-        fontSize={15}
+        fontSize={fontSizeSubTitle}
       />
     </View>
   );
