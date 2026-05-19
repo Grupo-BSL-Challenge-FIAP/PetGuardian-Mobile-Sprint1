@@ -30,7 +30,7 @@ export default function ContainerTitleSubTitle({
       />
       <SubTitleOrange
         title={textSubTitle}
-        fontFamily={FONTS.poppins[400]}
+        fontFamily={FONTS.poppins[600]}
         fontSize={fontSizeSubTitle}
       />
     </View>
