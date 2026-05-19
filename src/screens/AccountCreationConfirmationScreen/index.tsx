@@ -6,8 +6,29 @@ import HeaderForm from "../../components/HeaderForm";
 import ButtonFormLink from "../../components/ButtonFormLink";
 import Feather from '@expo/vector-icons/Feather';
 import { COLORS } from "../../styles/styles";
+import { useState } from "react";
+import { ResponsibleType } from "../../types/ResponsibleType";
+import { PetType } from "../../types/PetType";
 
 export default function AccountCreationConfirmationScreen() {
+
+  const [responsible, setResponsible] = useState<ResponsibleType>({
+    name: "",
+    birthDate: "",
+    cpf: "",
+    phone: "",
+    address: "",
+  })
+
+  const [pet, setPet] = useState<PetType>({
+    name: "",
+    species: "",
+    breed: "",
+    sex: "",
+    birthDate: "",
+    weight: "",
+  })
+
   return (
     <LayoutWrapper isDogPawBottomTop={true}>
       <View
