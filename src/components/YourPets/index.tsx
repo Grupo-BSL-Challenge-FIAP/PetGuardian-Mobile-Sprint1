@@ -91,7 +91,7 @@ export default function YourPets() {
                 height: 60,
                 borderRadius: 100,
                 borderWidth: petActive === pet.id ? 3 : 0,
-                borderColor: COLORS.orange[900],
+                borderColor: COLORS.orange[500],
               }}
             />
           </TouchableOpacity>
