@@ -11,6 +11,9 @@ export default function ContainerTitleSubTitle({
   fontSizeTiTleOrange,
   fontSizeSubTitle,
   fontFamilySubTitle,
+  marginBottom,
+  marginTop,
+  marginVertical,
   flexDirection,
   gap,
   flewWrap,
@@ -20,6 +23,9 @@ export default function ContainerTitleSubTitle({
       style={{
         alignItems: alignItems || "center",
         flexDirection: flexDirection || "column",
+        marginBottom: marginBottom || 0,
+        marginTop: marginTop || 0,
+        marginVertical: marginVertical || 0,
         gap: gap,
         flexWrap: flewWrap,
       }}
