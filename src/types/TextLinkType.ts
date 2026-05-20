@@ -6,4 +6,6 @@ export interface TextLinkType {
   colorText?: string;
   fontFamily?: string;
   fontSize?: number;
+  iconRight?: React.ReactNode;
+  iconLeft?: React.ReactNode;
 }
