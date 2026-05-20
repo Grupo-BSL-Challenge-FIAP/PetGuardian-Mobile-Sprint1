@@ -35,5 +35,12 @@ export const FONTS = {
         500: 'Poppins-Medium',
         600: 'Poppins-SemiBold',
         700: 'Poppins-Bold',
-    }
+    },
+
+    inter: {
+        400: "Inter-Regular",
+        500: "Inter-Medium",
+        600: "Inter-SemiBold",
+        700: "Inter-Bold",
+    },
 }
