@@ -5,12 +5,19 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { TextLinkType } from "../../types/TextLinkType";
 import { COLORS, FONTS } from "../../styles/styles";
 
-export default function TextLink({ route, textLink, colorText, fontFamily, fontSize }: TextLinkType) {
+export default function TextLink({ route, textLink, colorText, fontFamily, fontSize, iconRight, iconLeft }: TextLinkType) {
   
  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <Pressable onPress={() => navigation.navigate(route)}>
+    <Pressable 
+        onPress={() => navigation.navigate(route)}
+        style={{
+            flexDirection: 'row',
+            alignItems: 'center'
+        }}
+    >
+        {iconLeft}
         <Text
             style={{
                 color: colorText || COLORS.orange[900],
@@ -20,6 +27,7 @@ export default function TextLink({ route, textLink, colorText, fontFamily, fontS
         >
             {textLink}
         </Text>
+        {iconRight}
     </Pressable>
   );
 }
