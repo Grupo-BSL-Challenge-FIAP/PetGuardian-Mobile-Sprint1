@@ -149,32 +149,36 @@ export default function FormPet() {
 
   const saveDataPetData = async () => {
     try {
+      const petsStorage = await AsyncStorage.getItem("@petguardian:petsData");
+
+      const pets = petsStorage ? JSON.parse(petsStorage) : [];
+
       const petData = {
+        id: Date.now(),
         name,
         species,
         breed,
         gender,
         birthDate,
         weight,
+        image: "dogPaws",
       };
 
+      const updatedPets = [...pets, petData];
+
       await AsyncStorage.setItem(
-        "@petguardian:petData",
-        JSON.stringify(petData),
+        "@petguardian:petsData",
+        JSON.stringify(updatedPets),
       );
 
-      const savePet = await AsyncStorage.getItem(
-        "@petguardian:petData",
+      await AsyncStorage.setItem(
+        "@petguardian:activePetId",
+        String(petData.id),
       );
 
-      console.log(
-        "Dados do pet salvos:",
-        JSON.parse(savePet || "{}"),
-      );
+      console.log("Pets salvos:", updatedPets);
     } catch (error) {
-      setMessageError(
-        "Ocorreu um erro ao salvar os dados. Tente novamente.",
-      );
+      setMessageError("Ocorreu um erro ao salvar os dados. Tente novamente.");
     }
   };
 
