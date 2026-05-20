@@ -7,6 +7,7 @@ import AccountCreationConfirmationScreen from "../screens/AccountCreationConfirm
 import DashboardResponsibleScreen from "../screens/DashboardResponsibleScreen";
 import AuthenticationCodeScreen from "../screens/AuthenticationCodeScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
+import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 
 export type RootStackParamList = {
   HomeLoginCadastroScreen: undefined;
@@ -17,6 +18,7 @@ export type RootStackParamList = {
   DashboardResponsibleScreen: undefined;
   AuthenticationCodeScreen: undefined;
   ForgotPasswordScreen: undefined;
+  ResetPasswordScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -85,6 +87,14 @@ export default function AppNavigator() {
         <Stack.Screen 
             name="ForgotPasswordScreen"
             component={ForgotPasswordScreen}
+            options={({ navigation }) => ({
+              headerShown: false
+            })}    
+        />
+
+        <Stack.Screen 
+            name="ResetPasswordScreen"
+            component={ResetPasswordScreen}
             options={({ navigation }) => ({
               headerShown: false
             })}    
