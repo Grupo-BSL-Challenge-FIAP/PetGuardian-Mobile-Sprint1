@@ -4,6 +4,7 @@ import { BACKGROUND, COLORS, FONTS } from "../../styles/styles";
 import TitleOrange from "../../components/TitleOrange";
 import SubTitleOrange from "../../components/SubTitleOrange";
 import ButtonLink from "../../components/ButtonLink";
+import ContainerButton from "../../components/ContainerButton";
 
 
 export default function HomeLoginCadastroScreen() {
@@ -24,10 +25,8 @@ export default function HomeLoginCadastroScreen() {
             <TitleOrange title={`Boas vindas ao\nPet Guardian!`} />
             <SubTitleOrange title={`Faça login ou cadastre-se para começar a cuidar do seu pet!`} />
           </View>
-          <View 
-            style={{
-              gap: 19,
-            }}
+          <ContainerButton
+            gap={19}
           >
             <ButtonLink
               route="LoginScreen"
@@ -43,7 +42,7 @@ export default function HomeLoginCadastroScreen() {
             >
               Fazer cadastro
             </ButtonLink>
-          </View>
+          </ContainerButton>
         </View>
     </LayoutWrapper>
   );
