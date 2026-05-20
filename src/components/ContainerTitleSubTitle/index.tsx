@@ -10,6 +10,7 @@ export default function ContainerTitleSubTitle({
   textSubTitle,
   fontSizeTiTleOrange,
   fontSizeSubTitle,
+  fontFamilySubTitle,
   flexDirection,
   gap,
   flewWrap,
@@ -30,7 +31,7 @@ export default function ContainerTitleSubTitle({
       />
       <SubTitleOrange
         title={textSubTitle}
-        fontFamily={FONTS.poppins[600]}
+        fontFamily={fontFamilySubTitle || FONTS.poppins[600]}
         fontSize={fontSizeSubTitle}
         textAlign="center"
       />
