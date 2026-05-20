@@ -4,35 +4,47 @@ import { BACKGROUND } from "../../styles/styles";
 import DogPaws from "../DogPaws";
 import DogPawBottomTop from "../DogPawBottomTop";
 export interface LayoutWrapperProps {
-    children: React.ReactNode;
-    paddingHorizontal?: number;
-    paddingBottom?: number;
-    isDogPaws?: boolean;
-    isDogPawBottomTop?: boolean;
+  children: React.ReactNode;
+  paddingHorizontal?: number;
+  paddingBottom?: number;
+  isDogPaws?: boolean;
+  isDogPawBottomTop?: boolean;
+  justifyContent?: "center" | "flex-end" | "flex-start";
+  alignItems?: "center" | "flex-end" | "flex-start";
 }
 
-export default function LayoutWrapper({ children, paddingHorizontal, paddingBottom, isDogPaws= false, isDogPawBottomTop= false }: LayoutWrapperProps) {
+export default function LayoutWrapper({
+  children,
+  paddingHorizontal,
+  paddingBottom,
+  isDogPaws = false,
+  isDogPawBottomTop = false,
+  justifyContent,
+  alignItems,
+}: LayoutWrapperProps) {
   return (
     <>
-    <SafeAreaView 
+      <SafeAreaView
         style={{
-            flex: 1,
-            backgroundColor: BACKGROUND.backgroundMain,
-            paddingHorizontal: paddingHorizontal || 15,
-            paddingBottom: paddingBottom || 50,
+          flex: 1,
+          backgroundColor: BACKGROUND.backgroundMain,
+          paddingHorizontal: paddingHorizontal || 15,
+          paddingBottom: paddingBottom || 50,
         }}
-    >
+      >
         {isDogPaws && <DogPaws />}
         {isDogPawBottomTop && <DogPawBottomTop />}
         <ScrollView
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={{
-                flexGrow: 1,
-            }}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            flexGrow: 1,
+            justifyContent: justifyContent,
+            alignItems: alignItems,
+          }}
         >
-            {children}
+          {children}
         </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
     </>
   );
 }
