@@ -3,10 +3,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { BACKGROUND } from "../../styles/styles";
 import DogPaws from "../DogPaws";
 import DogPawBottomTop from "../DogPawBottomTop";
+import HeaderDashboardResponsible from "../HeaderDashboardResponsible";
 export interface LayoutWrapperProps {
   children: React.ReactNode;
   paddingHorizontal?: number;
   paddingBottom?: number;
+  marginTop?: number;
+  isHeaderDashboardResponsible?: boolean,
   isDogPaws?: boolean;
   isDogPawBottomTop?: boolean;
   justifyContent?: "center" | "flex-end" | "flex-start";
@@ -17,6 +20,8 @@ export default function LayoutWrapper({
   children,
   paddingHorizontal,
   paddingBottom,
+  marginTop,
+  isHeaderDashboardResponsible = false,
   isDogPaws = false,
   isDogPawBottomTop = false,
   justifyContent,
@@ -32,6 +37,7 @@ export default function LayoutWrapper({
           paddingBottom: paddingBottom || 50,
         }}
       >
+        {isHeaderDashboardResponsible && <HeaderDashboardResponsible />}
         {isDogPaws && <DogPaws />}
         {isDogPawBottomTop && <DogPawBottomTop />}
         <ScrollView
@@ -40,6 +46,7 @@ export default function LayoutWrapper({
             flexGrow: 1,
             justifyContent: justifyContent,
             alignItems: alignItems,
+            marginTop: marginTop,
           }}
         >
           {children}
