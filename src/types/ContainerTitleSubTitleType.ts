@@ -5,6 +5,9 @@ export interface ContainerTitleSubTitleType {
     fontSizeTiTleOrange?: number;
     fontSizeSubTitle?: number;
     fontFamilySubTitle?: string;
+    marginBottom?: number;
+    marginTop?: number;
+    marginVertical?: number;
     flexDirection?: "column" | "row";
     gap?: number;
     flewWrap?: "wrap" | "nowrap" | "wrap-reverse";
