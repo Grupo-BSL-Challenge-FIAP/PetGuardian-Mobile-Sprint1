@@ -32,6 +32,7 @@ export default function ContainerTitleSubTitle({
         title={textSubTitle}
         fontFamily={FONTS.poppins[600]}
         fontSize={fontSizeSubTitle}
+        textAlign="center"
       />
     </View>
   );
