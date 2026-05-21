@@ -6,6 +6,7 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import CardStatus from "../CardStatus";
 import ContainerStatus from "../ContainerStatus";
+import ButtonLink from "../ButtonLink";
 
 export default function StatusPet() {
   return (
@@ -100,6 +101,17 @@ export default function StatusPet() {
             <FontAwesome name="calendar-check-o" size={50} color="black" />
           </View>
         </CardStatus>
+        <View style={{ width: "100%" }}>
+            <ButtonLink
+                route="PetsScreen"
+                fontSize={15}
+                backgroundColor={COLORS.orange[700]}
+                borderWidth={2}
+                fontFamily={FONTS.inter[700]}
+            >
+                Ver mais detalhes na página do pet
+            </ButtonLink>
+        </View>
       </ContainerStatus>
     </View>
   );
