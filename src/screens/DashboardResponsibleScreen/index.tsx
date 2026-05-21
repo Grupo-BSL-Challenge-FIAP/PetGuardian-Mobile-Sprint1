@@ -1,11 +1,19 @@
 import { Text, View } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
 import HeaderDashboardResponsible from "../../components/HeaderDashboardResponsible";
+import YourPets from "../../components/YourPets";
 
 export default function DashboardResponsibleScreen() {
   return (
     <LayoutWrapper paddingHorizontal={-1} marginTop={90} isHeaderDashboardResponsible={true}>
-        <Text>Dashboard do Responsável</Text>
+      <View
+        style={{
+          paddingHorizontal: 15,
+          marginTop: 20
+        }}
+      >
+        <YourPets />
+      </View>
     </LayoutWrapper>
   );
 }
