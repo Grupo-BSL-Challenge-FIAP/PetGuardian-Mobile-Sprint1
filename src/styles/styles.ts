@@ -20,6 +20,11 @@ export const COLORS = {
         300: '#FAFAFA'
     },
 
+    // black
+    black: {
+        100: '#000000',
+    },
+
     // Red
     red: {
         100: '#f8d7da',
