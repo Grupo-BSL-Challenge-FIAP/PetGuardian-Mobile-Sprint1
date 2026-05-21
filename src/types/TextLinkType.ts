@@ -8,4 +8,6 @@ export interface TextLinkType {
   fontSize?: number;
   iconRight?: React.ReactNode;
   iconLeft?: React.ReactNode;
+  gap?: number;
+  opacity?: number;
 }
