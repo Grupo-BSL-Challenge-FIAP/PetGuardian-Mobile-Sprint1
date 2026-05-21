@@ -47,6 +47,7 @@ export default function LayoutWrapper({
             justifyContent: justifyContent,
             alignItems: alignItems,
             marginTop: marginTop,
+            paddingTop: isHeaderDashboardResponsible ? 70 : 0 
           }}
         >
           {children}
