@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { TextLinkType } from "../../types/TextLinkType";
 import { COLORS, FONTS } from "../../styles/styles";
 
-export default function TextLink({ route, textLink, colorText, fontFamily, fontSize, iconRight, iconLeft }: TextLinkType) {
+export default function TextLink({ route, textLink, colorText, fontFamily, fontSize, iconRight, iconLeft, gap, opacity }: TextLinkType) {
   
  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
@@ -14,7 +14,8 @@ export default function TextLink({ route, textLink, colorText, fontFamily, fontS
         onPress={() => navigation.navigate(route)}
         style={{
             flexDirection: 'row',
-            alignItems: 'center'
+            alignItems: 'center',
+            gap: gap || 0,
         }}
     >
         {iconLeft}
@@ -23,6 +24,7 @@ export default function TextLink({ route, textLink, colorText, fontFamily, fontS
                 color: colorText || COLORS.orange[900],
                 fontFamily: fontFamily || FONTS.poppins[500],
                 fontSize: fontSize || 14,
+                opacity: opacity,
             }}
         >
             {textLink}
