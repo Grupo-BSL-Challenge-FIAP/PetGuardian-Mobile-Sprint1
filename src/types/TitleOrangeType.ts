@@ -3,4 +3,6 @@ export interface TitleOrangeType {
   fontSize?: number;
   textAlign?: "left" | "center" | "right";
   fontFamily?: string;
+  marginLeft?: number;
+  color?: string;
 }
