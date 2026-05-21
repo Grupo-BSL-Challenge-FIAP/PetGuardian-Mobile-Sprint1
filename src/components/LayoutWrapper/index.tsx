@@ -9,7 +9,7 @@ export interface LayoutWrapperProps {
   paddingHorizontal?: number;
   paddingBottom?: number;
   marginTop?: number;
-  isHeaderDashboardResponsible?: boolean,
+  isHeaderDashboardResponsible?: boolean;
   isDogPaws?: boolean;
   isDogPawBottomTop?: boolean;
   justifyContent?: "center" | "flex-end" | "flex-start";
@@ -37,7 +37,6 @@ export default function LayoutWrapper({
           paddingBottom: paddingBottom || 50,
         }}
       >
-        {isHeaderDashboardResponsible && <HeaderDashboardResponsible />}
         {isDogPaws && <DogPaws />}
         {isDogPawBottomTop && <DogPawBottomTop />}
         <ScrollView
@@ -47,9 +46,9 @@ export default function LayoutWrapper({
             justifyContent: justifyContent,
             alignItems: alignItems,
             marginTop: marginTop,
-            paddingTop: isHeaderDashboardResponsible ? 70 : 0 
           }}
-        >
+          >
+          {isHeaderDashboardResponsible && <HeaderDashboardResponsible />}
           {children}
         </ScrollView>
       </SafeAreaView>
