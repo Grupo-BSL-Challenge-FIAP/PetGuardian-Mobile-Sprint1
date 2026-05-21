@@ -34,7 +34,7 @@ export default function HeaderDashboardResponsible() {
         justifyContent: "center",
         width: "100%",
         backgroundColor: COLORS.orange[900],
-        paddingVertical: 40,
+        paddingVertical: 35,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10
@@ -43,7 +43,7 @@ export default function HeaderDashboardResponsible() {
       <View style={{
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 15
+        gap: 15,
       }}>
         <Image
           source={require("../../assets/dogPaws.png")}
