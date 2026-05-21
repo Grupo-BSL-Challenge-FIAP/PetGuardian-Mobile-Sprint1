@@ -6,5 +6,5 @@ export interface PetType {
   gender: string;
   birthDate: string;
   weight: string;
-  image: string;
+  image?: string;
 }
