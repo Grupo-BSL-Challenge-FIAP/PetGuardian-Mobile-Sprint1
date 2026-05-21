@@ -30,21 +30,22 @@ export default function HeaderDashboardResponsible() {
   return (
     <View
       style={{
-        position: "absolute",
         justifyContent: "center",
         width: "100%",
         backgroundColor: COLORS.orange[900],
-        paddingVertical: 35,
+        paddingVertical: 15,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10
+        borderBottomRightRadius: 10,
       }}
     >
-      <View style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 15,
-      }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          gap: 15,
+        }}
+      >
         <Image
           source={require("../../assets/dogPaws.png")}
           style={{
@@ -58,7 +59,7 @@ export default function HeaderDashboardResponsible() {
             style={{
               fontFamily: FONTS.inter[700],
               color: COLORS.white[100],
-              fontSize: 20
+              fontSize: 20,
             }}
           >
             {`Olá, ${responsible.name}!`}
@@ -67,7 +68,7 @@ export default function HeaderDashboardResponsible() {
             style={{
               fontFamily: FONTS.inter[500],
               color: COLORS.white[100],
-              fontSize: 15
+              fontSize: 15,
             }}
           >
             {responsible.email}
