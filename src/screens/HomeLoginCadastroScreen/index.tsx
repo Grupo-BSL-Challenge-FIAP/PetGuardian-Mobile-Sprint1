@@ -9,7 +9,7 @@ import ContainerButton from "../../components/ContainerButton";
 
 export default function HomeLoginCadastroScreen() {
   return (
-    <LayoutWrapper paddingHorizontal={30} isDogPaws={true}>
+    <LayoutWrapper paddingHorizontal={30} paddingBottom={50} isDogPaws={true}>
         <View 
           style={{
             flex: 1,
