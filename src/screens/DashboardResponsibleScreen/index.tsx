@@ -6,7 +6,7 @@ import ContainerInsights from "../../components/ContainerInsights";
 
 export default function DashboardResponsibleScreen() {
   return (
-    <LayoutWrapper paddingHorizontal={-1} isHeaderDashboardResponsible={true}>
+    <LayoutWrapper paddingHorizontal={-1} isHeaderDashboardResponsible={true} paddingBottom={50}>
       <View
         style={{
           paddingHorizontal: 15,
