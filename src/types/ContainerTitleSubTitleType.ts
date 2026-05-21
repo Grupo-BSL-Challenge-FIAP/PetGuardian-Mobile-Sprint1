@@ -4,7 +4,10 @@ export interface ContainerTitleSubTitleType {
     textSubTitle: string;
     fontSizeTiTleOrange?: number;
     fontSizeSubTitle?: number;
+    fontFamilyTitle?: string;
     fontFamilySubTitle?: string;
+    colorTitleOrange?: string;
+    marginLeftTitleOrange?: number;
     marginBottom?: number;
     marginTop?: number;
     marginVertical?: number;
