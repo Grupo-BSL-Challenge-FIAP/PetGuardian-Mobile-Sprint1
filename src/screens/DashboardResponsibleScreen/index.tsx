@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import LayoutWrapper from "../../components/LayoutWrapper";
 import HeaderDashboardResponsible from "../../components/HeaderDashboardResponsible";
 import YourPets from "../../components/YourPets";
+import StatusPet from "../../components/StatusPet";
 
 export default function DashboardResponsibleScreen() {
   return (
@@ -9,10 +10,12 @@ export default function DashboardResponsibleScreen() {
       <View
         style={{
           paddingHorizontal: 15,
-          marginTop: 20
+          marginTop: 20,
+          gap: 30
         }}
       >
         <YourPets />
+        <StatusPet />
       </View>
     </LayoutWrapper>
   );
