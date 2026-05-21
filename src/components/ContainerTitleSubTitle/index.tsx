@@ -10,8 +10,11 @@ export default function ContainerTitleSubTitle({
   textSubTitle,
   fontSizeTiTleOrange,
   fontSizeSubTitle,
+  fontFamilyTitle,
   fontFamilySubTitle,
   marginBottom,
+  marginLeftTitleOrange,
+  colorTitleOrange,
   marginTop,
   marginVertical,
   flexDirection,
@@ -34,6 +37,9 @@ export default function ContainerTitleSubTitle({
         title={textTitle}
         textAlign="center"
         fontSize={fontSizeTiTleOrange}
+        fontFamily={fontFamilyTitle}
+        marginLeft={marginLeftTitleOrange}
+        color={colorTitleOrange}
       />
       <SubTitleOrange
         title={textSubTitle}
