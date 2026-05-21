@@ -34,7 +34,7 @@ export default function LayoutWrapper({
           flex: 1,
           backgroundColor: BACKGROUND.backgroundMain,
           paddingHorizontal: paddingHorizontal || 15,
-          paddingBottom: paddingBottom || 50,
+          paddingBottom: paddingBottom || 0,
         }}
       >
         {isDogPaws && <DogPaws />}
