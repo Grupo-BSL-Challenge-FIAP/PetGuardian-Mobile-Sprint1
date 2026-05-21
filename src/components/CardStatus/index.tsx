@@ -22,7 +22,7 @@ export default function CardStatus({
       onPress={onPress}
       style={{
         backgroundColor: background || COLORS.orange[100],
-        width: width || "50%",
+        width: width || "47%",
         paddingLeft: paddingLeft || 15,
         paddingBottom: paddingBottom || 18,
         paddingTop: paddingTop || 14,
@@ -36,7 +36,9 @@ export default function CardStatus({
       {isIconRoute && (
         <View
           style={{
-            alignItems: "flex-end",
+            position: "absolute",
+            bottom: 5,
+            right: 10
           }}
         >
           <Ionicons name="open-outline" size={24} color="black" />
