@@ -9,6 +9,7 @@ import AuthenticationCodeScreen from "../screens/AuthenticationCodeScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import ResetPasswordScreen from "../screens/ResetPasswordScreen";
 import PetsScreen from "../screens/PetsScreen";
+import NotificationsScreen from "../screens/NotificationsScreen";
 
 export type RootStackParamList = {
   HomeLoginCadastroScreen: undefined;
@@ -21,6 +22,7 @@ export type RootStackParamList = {
   ForgotPasswordScreen: undefined;
   ResetPasswordScreen: undefined;
   PetsScreen: undefined;
+  NotificationsScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -105,6 +107,14 @@ export default function AppNavigator() {
         <Stack.Screen 
             name="PetsScreen"
             component={PetsScreen}
+            options={({ navigation }) => ({
+              headerShown: false
+            })}    
+        />
+
+        <Stack.Screen 
+            name="NotificationsScreen"
+            component={NotificationsScreen}
             options={({ navigation }) => ({
               headerShown: false
             })}    
