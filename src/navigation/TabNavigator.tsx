@@ -7,6 +7,7 @@ import { COLORS, FONTS } from "../styles/styles";
 import ProfileResponsibleScreen from "../screens/ProfileResponsibleScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { View } from "react-native";
+import PageUnderDevelopmentScreen from "../screens/PageUnderDevelopmentScreen";
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
@@ -73,7 +74,7 @@ export default function TabNavigator() {
 
       <Tab.Screen
         name="Pets"
-        component={PetsScreen}
+        component={PageUnderDevelopmentScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -103,7 +104,7 @@ export default function TabNavigator() {
 
       <Tab.Screen
         name="Notificações"
-        component={NotificationsScreen}
+        component={PageUnderDevelopmentScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -133,7 +134,7 @@ export default function TabNavigator() {
 
       <Tab.Screen
         name="Perfil"
-        component={ProfileResponsibleScreen}
+        component={PageUnderDevelopmentScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
