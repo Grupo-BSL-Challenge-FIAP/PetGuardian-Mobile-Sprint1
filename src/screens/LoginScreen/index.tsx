@@ -86,7 +86,7 @@ export default function LoginScreen() {
 
     if (!isValid) return;
 
-    navigation.navigate("DashboardResponsibleScreen");
+    navigation.navigate("TabsDashboardResponsible");
   };
 
   return (
