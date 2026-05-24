@@ -25,6 +25,7 @@ export type RootStackParamList = {
   PetsScreen: undefined;
   NotificationsScreen: undefined;
   ProfileResponsibleScreen: undefined;
+  PageUnderDevelopmentScreen: undefined;
   TabsDashboardResponsible: undefined;
   TabsPet: undefined;
   TabsNotification: undefined;
@@ -130,6 +131,14 @@ export default function AppNavigator() {
 
       <Stack.Screen
         name="TabsProfileScreen"
+        component={TabNavigator}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })}
+      />
+
+      <Stack.Screen
+        name="PageUnderDevelopmentScreen"
         component={TabNavigator}
         options={({ navigation }) => ({
           headerShown: false,
