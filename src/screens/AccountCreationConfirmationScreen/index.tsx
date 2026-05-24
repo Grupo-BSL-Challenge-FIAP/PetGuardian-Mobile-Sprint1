@@ -76,7 +76,7 @@ export default function AccountCreationConfirmationScreen() {
 
     console.log("Dados da nova conta:", newAccountData);
 
-    navigate.navigate("DashboardResponsibleScreen");
+    navigate.navigate("TabsDashboardResponsible");
   };
 
   return (
