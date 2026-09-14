@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="/src/assets/petGuardianLogoLight.png" alt="Logo da Pet Guardian" width="240"/>
+  <img width="270" height="270" alt="image" src="https://github.com/user-attachments/assets/d72bd46f-639c-4197-94b0-0e3c37791250" />
 </p>
   
-<h1 align="center">🐾 Pet Guardian - Monitoramento IoT de Pets</h1>
+<h1 align="center">🐾 Vitalia - Monitoramento IoT de Pets</h1>
 <h4>
   Sistema de monitoramento de saúde em tempo real para pets, desenvolvido com ESP32 e sensores de temperatura e frequência cardíaca. Os dados são exibidos em um display LCD e enviados para uma API REST.
 </h4>
@@ -20,7 +20,7 @@
     </td>
     <td>
       <b>Moisés Barsoti Andrade de Oliveira</b><br/>
-      <b>RM:</b> 565049 &nbsp;&nbsp;|&nbsp;&nbsp;<b>Turma:</b> 2TDSPG - FIAP <br/>
+      <b>RM:</b> 565049 &nbsp;&nbsp;|&nbsp;&nbsp;<b>Turma:</b> 2TDSPO - FIAP <br/>
     </td>
   </tr>
   <tr>
