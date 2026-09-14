@@ -773,6 +773,6 @@ npx expo start -c
 
 Clique abaixo para assistir ao vídeo de demonstração:
 
-### ▶️ [Vitalia - Aplicativo Mobile | Sprint 3](https://www.youtube.com)
+### ▶️ [Vitalia - Aplicativo Mobile | Sprint 3](https://www.youtube.com/watch?v=zusyhVfg_b4)
 
 ---
